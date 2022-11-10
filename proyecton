@@ -25,7 +25,7 @@ namespace ConsoleApp1
         if (MerhakAtzira > Merhak)
         {
 
-          double Velocity = Math.Sqrt(Mehiroot - ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
+          double Velocity = Math.Sqrt(Mehiroot + ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
           if (Velocity < 0)
           {
             Velocity = Velocity * (-1);
@@ -96,7 +96,7 @@ namespace ConsoleApp1
         if (MerhakAtzira >= Merhak)
         {
           Console.BackgroundColor = ConsoleColor.Red;
-          double Velocity = Math.Sqrt(Mehiroot - ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
+          double Velocity = Math.Sqrt(Mehiroot + ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
 
 
           if (Velocity < 0)
