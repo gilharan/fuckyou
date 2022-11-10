@@ -4,161 +4,176 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp2
 {
-  internal class Program
-  {
-    static void Main(string[] args)
+    internal class Program
     {
-      Console.WriteLine("Ma is de merhak of de oto from de ish");
-      double Merhak = Convert.ToDouble(Console.ReadLine());
-      Console.WriteLine("Ma is de mehiroot of de oto");
-      double Mehiroot = Convert.ToDouble(Console.ReadLine());
-      Console.WriteLine("ha im hacvish ratoov");
-      string ratoov = Console.ReadLine();
-      if (ratoov == "yes")
-      {
-        Mehiroot = Mehiroot / (3.6);
-        double AS = 3.5;
-        double MerhakAtzira = (0.75 * Mehiroot) + ((Mehiroot * Mehiroot) / (2 * AS));
-
-        if (MerhakAtzira > Merhak)
+        static void Main(string[] args)
         {
-
-          double Velocity = Math.Sqrt(Mehiroot + ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
-          if (Velocity < 0)
-          {
-            Velocity = Velocity * (-1);
-          }
-            if (Velocity <= 2)
+            Console.WriteLine("Ma is de merhak of de oto from de ish");
+            double Merhak = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Ma is de mehiroot of de oto");
+            double Mehiroot = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("ha im hacvish ratoov");
+            string ratoov = Console.ReadLine();
+            if (ratoov == "yes")
             {
-              Console.BackgroundColor = ConsoleColor.Yellow;
-              Console.WriteLine("Fine, minor hit");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("_______________________ __/__|__]___> _0_ ");
-            Console.WriteLine("-------------------------O==========O-  !  ");
-            Console.WriteLine("______________________________________( )");
-          }
-            if (Velocity >= 2 && Velocity <= 3)
+                Mehiroot = Mehiroot / (3.6);
+                double AS = 3.5;
+                double MerhakAtzira = (0.75 * Mehiroot) + ((Mehiroot * Mehiroot) / (2 * AS));
+
+                if (MerhakAtzira > Merhak)
+                {
+
+                    double Velocity = Math.Sqrt(Mehiroot + ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
+                    if (Velocity < 0)
+                    {
+                        Velocity = Velocity * (-1);
+                    }
+                    if (Velocity <= 2)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Fine, minor hit");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine("_______________________ __/__|__]___> _0_ ");
+                        Console.WriteLine("-------------------------O==========O-  !  ");
+                        Console.WriteLine("______________________________________( )");
+                    }
+                    if (Velocity >= 2 && Velocity <= 3)
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Ok, medium hit");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine("_______________________ __/__|__]___> _0_ ");
+                        Console.WriteLine("-------------------------O==========O-  !  ");
+                        Console.WriteLine("______________________________________( )");
+                    }
+                    if (Velocity >= 3 && Velocity <= 4)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Bad, Hard hit");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine("_______________________ __/__|__]___> _0_ ");
+                        Console.WriteLine("-------------------------O==========O-  !  ");
+                        Console.WriteLine("______________________________________( )");
+                    }
+                    if (Velocity >= 5)
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("he dead bruh");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine("_______________________ __/__|__]___> ");
+                        Console.WriteLine("-------------------------O==========O-");
+                        Console.WriteLine("______________________________________");
+
+                    }
+
+
+
+                }
+                if (MerhakAtzira < Merhak)
+                {
+
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Safe, no hit");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.WriteLine("_________ __/__|__]___> _________________________ _0_ ");
+                    Console.WriteLine("--------- O==========O -------------------------   !  ");
+                    Console.WriteLine("__________________________________________________( )");
+
+
+
+                }
+                Console.WriteLine("|----------------------------------------------------------|");
+                Console.WriteLine($"| the speed of the car at the beginnig -->{Mehiroot * 3.6}| ");
+                Console.WriteLine(" |---------------------------------------------------------|");
+                Console.WriteLine($"|the car distance from the person -->{Merhak}             ");
+                Console.WriteLine(" |---------------------------------------------------------|");
+                Console.WriteLine($"|the road {ratoov} wet                                    ");
+                Console.WriteLine(" ----------------------------------------------------------|");
+            }
+
+
+
+            else
             {
-              Console.BackgroundColor = ConsoleColor.DarkYellow;
-              Console.WriteLine("Ok, medium hit");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("_______________________ __/__|__]___> _0_ ");
-            Console.WriteLine("-------------------------O==========O-  !  ");
-            Console.WriteLine("______________________________________( )");
-          }
-            if (Velocity >= 3 && Velocity <= 4)
-            {
-              Console.BackgroundColor = ConsoleColor.Red;
-              Console.WriteLine("Bad, Hard hit");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("_______________________ __/__|__]___> _0_ ");
-            Console.WriteLine("-------------------------O==========O-  !  ");
-            Console.WriteLine("______________________________________( )");
-          }
-            if (Velocity >= 5)
-            {
-              Console.BackgroundColor = ConsoleColor.DarkRed;
-              Console.WriteLine("he dead bruh");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("_______________________ __/__|__]___> ");
-            Console.WriteLine("-------------------------O==========O-");
-            Console.WriteLine("______________________________________");
-
-          }
+                Mehiroot = Mehiroot / (3.6);
+                double AS = 6;
+                double MerhakAtzira = (0.75 * Mehiroot) + ((Mehiroot * Mehiroot) / (2 * AS));
+                if (MerhakAtzira >= Merhak)
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    double Velocity = Math.Sqrt(Mehiroot + ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
 
 
+                    if (Velocity < 0)
+                    {
+                        Velocity = Velocity * (-1);
+                    }
+                    if (Velocity <= 2)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Fine, minor hit");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine("_______________________ __/__|__]___> _0_ ");
+                        Console.WriteLine("-------------------------O==========O- !  ");
+                        Console.WriteLine("______________________________________( )");
+                    }
+                    if (Velocity >= 2 && Velocity <= 3)
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Ok, medium hit");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine("_______________________ __/__|__]___> _0_ ");
+                        Console.WriteLine("-------------------------O==========O- !  ");
+                        Console.WriteLine("______________________________________( )");
+                    }
+                    if (Velocity >= 3 && Velocity <= 4)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Bad, Hard hit");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine("_______________________ __/__|__]___> _0_ ");
+                        Console.WriteLine("-------------------------O==========O- !  ");
+                        Console.WriteLine("______________________________________( )");
+                    }
+                    if (Velocity >= 5)
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("he dead bruh");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine("_______________________ __/__|__]___> ");
+                        Console.WriteLine("-------------------------O==========O-");
+                        Console.WriteLine("______________________________________");
 
+                    }
+
+
+
+                }
+                if (MerhakAtzira < Merhak)
+                {
+
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Safe, no hit");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.WriteLine("_________ __/__|__]___> _________________________ _0_ ");
+                    Console.WriteLine("--------- O==========O -------------------------   !  ");
+                    Console.WriteLine("__________________________________________________( )");
+
+
+
+                }
+                Console.WriteLine("|----------------------------------------------------------|");
+                Console.WriteLine($"| the speed of the car at the beginnig -->{Mehiroot * 3.6}| ");
+                Console.WriteLine(" |---------------------------------------------------------|");
+                Console.WriteLine($"|the car distance from the person -->{Merhak}             ");
+                Console.WriteLine(" |---------------------------------------------------------|");
+                Console.WriteLine($"|the road {ratoov} wet                                    ");
+                Console.WriteLine(" ----------------------------------------------------------|");
+            }
+         
         }
-        if (MerhakAtzira < Merhak)
-        {
-
-          Console.BackgroundColor = ConsoleColor.Green;
-          Console.WriteLine("Safe, no hit");
-          Console.BackgroundColor = ConsoleColor.Black;
-          Console.WriteLine("_________ __/__|__]___> _________________________ _0_ ");
-          Console.WriteLine("--------- O==========O -------------------------   !  ");
-          Console.WriteLine("__________________________________________________( )");
-          
-
-
-        }
-      }
-
-
-
-      else
-      {
-        Mehiroot = Mehiroot / (3.6);
-        double AS = 6;
-        double MerhakAtzira = (0.75 * Mehiroot) + ((Mehiroot * Mehiroot) / (2 * AS));
-        if (MerhakAtzira >= Merhak)
-        {
-          Console.BackgroundColor = ConsoleColor.Red;
-          double Velocity = Math.Sqrt(Mehiroot + ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
-
-
-          if (Velocity < 0)
-          {
-            Velocity = Velocity * (-1);
-          }
-          if (Velocity <= 2)
-          {
-            Console.BackgroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Fine, minor hit");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("_______________________ __/__|__]___> _0_ ");
-            Console.WriteLine("-------------------------O==========O- !  ");
-            Console.WriteLine("______________________________________( )");
-          }
-          if (Velocity >= 2 && Velocity <= 3)
-          {
-            Console.BackgroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("Ok, medium hit");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("_______________________ __/__|__]___> _0_ ");
-            Console.WriteLine("-------------------------O==========O- !  ");
-            Console.WriteLine("______________________________________( )");
-          }
-          if (Velocity >= 3 && Velocity <= 4)
-          {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("Bad, Hard hit");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("_______________________ __/__|__]___> _0_ ");
-            Console.WriteLine("-------------------------O==========O- !  ");
-            Console.WriteLine("______________________________________( )");
-          }
-          if (Velocity >= 5)
-          {
-            Console.BackgroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("he dead bruh");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("_______________________ __/__|__]___> ");
-            Console.WriteLine("-------------------------O==========O-");
-            Console.WriteLine("______________________________________");
-
-          }
-
-
-
-        }
-        if (MerhakAtzira < Merhak)
-        {
-
-          Console.BackgroundColor = ConsoleColor.Green;
-          Console.WriteLine("Safe, no hit");
-          Console.BackgroundColor = ConsoleColor.Black;
-          Console.WriteLine("_________ __/__|__]___> _________________________ _0_ ");
-          Console.WriteLine("--------- O==========O -------------------------   !  ");
-          Console.WriteLine("__________________________________________________( )");
-
-
-
-        }
-      }
 
     }
-  }
 }
