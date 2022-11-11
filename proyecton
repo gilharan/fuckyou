@@ -8,24 +8,30 @@ namespace ConsoleApp2
 {
     internal class Program
     {
+        
+
         static void Main(string[] args)
         {
             Console.WriteLine("Ma is de merhak of de oto from de ish");
             double Merhak = Convert.ToDouble(Console.ReadLine());
+            double Merhak_Check = Merhak;
             Console.WriteLine("Ma is de mehiroot of de oto");
             double Mehiroot = Convert.ToDouble(Console.ReadLine());
+            double Mehiroot_Check = Mehiroot;
             Console.WriteLine("ha im hacvish ratoov");
             string ratoov = Console.ReadLine();
+            // all of the inputs above
             if (ratoov == "yes")
             {
                 Mehiroot = Mehiroot / (3.6);
                 double AS = 3.5;
                 double MerhakAtzira = (0.75 * Mehiroot) + ((Mehiroot * Mehiroot) / (2 * AS));
+                // לפי הנוסחא לכביש רטוב
 
                 if (MerhakAtzira > Merhak)
                 {
 
-                    double Velocity = Math.Sqrt(Mehiroot + ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
+                    double Velocity = Math.Sqrt((Mehiroot * Mehiroot) - ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
                     if (Velocity < 0)
                     {
                         Velocity = Velocity * (-1);
@@ -84,18 +90,12 @@ namespace ConsoleApp2
 
 
                 }
-                Console.WriteLine("|----------------------------------------------------------|");
-                Console.WriteLine($"| the speed of the car at the beginnig -->{Mehiroot * 3.6}| ");
-                Console.WriteLine(" |---------------------------------------------------------|");
-                Console.WriteLine($"|the car distance from the person -->{Merhak}             ");
-                Console.WriteLine(" |---------------------------------------------------------|");
-                Console.WriteLine($"|the road {ratoov} wet                                    ");
-                Console.WriteLine(" ----------------------------------------------------------|");
             }
 
 
 
             else
+            //לפי הנוסחא שהכביש לא רטוב
             {
                 Mehiroot = Mehiroot / (3.6);
                 double AS = 6;
@@ -103,7 +103,7 @@ namespace ConsoleApp2
                 if (MerhakAtzira >= Merhak)
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
-                    double Velocity = Math.Sqrt(Mehiroot + ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
+                    double Velocity = Math.Sqrt(Mehiroot - ((2 * AS) * (Merhak - (Mehiroot * 0.75))));
 
 
                     if (Velocity < 0)
@@ -147,6 +147,11 @@ namespace ConsoleApp2
                         Console.WriteLine("______________________________________");
 
                     }
+                    if (Merhak * 2 == Velocity)
+                    {
+                        Console.WriteLine("He aint dead bruh");
+
+                    }
 
 
 
@@ -160,20 +165,22 @@ namespace ConsoleApp2
                     Console.WriteLine("_________ __/__|__]___> _________________________ _0_ ");
                     Console.WriteLine("--------- O==========O -------------------------   !  ");
                     Console.WriteLine("__________________________________________________( )");
-
-
+                    
 
                 }
-                Console.WriteLine("|----------------------------------------------------------|");
-                Console.WriteLine($"| the speed of the car at the beginnig -->{Mehiroot * 3.6}| ");
-                Console.WriteLine(" |---------------------------------------------------------|");
-                Console.WriteLine($"|the car distance from the person -->{Merhak}             ");
-                Console.WriteLine(" |---------------------------------------------------------|");
-                Console.WriteLine($"|the road {ratoov} wet                                    ");
-                Console.WriteLine(" ----------------------------------------------------------|");
-            }
-         
-        }
 
+
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("The starting Mehirot is: " + Mehiroot_Check);
+            Console.WriteLine(" |------------------------------------------------|");
+            Console.WriteLine("The starting merchak is: " + Merhak_Check);
+            Console.WriteLine(" |------------------------------------------------|");
+            Console.WriteLine("Is the road wet? " + ratoov + ".");
+            Console.WriteLine(" |------------------------------------------------|");
+
+        }
     }
 }
